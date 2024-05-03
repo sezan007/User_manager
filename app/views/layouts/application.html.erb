@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
   <head>
     <title>Render01</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,6 +13,7 @@
   </head>
 
   <body>
+  <%= render 'pages/navbar' %>
     <%= yield %>
   </body>
 </html>
