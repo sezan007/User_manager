@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  registrations: 'users/registrations'
+}
+  resources :users do
+    collection do
+      patch :bulk_update
+      delete :bulk_delete
+      delete :delete_selected
+    end
+  end
+
   resources :users, only: [:index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
