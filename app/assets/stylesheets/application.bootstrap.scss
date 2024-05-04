@@ -15,16 +15,18 @@
  *= require_tree .
  *= require_self
  */
- .btn-icon-active {
-   background-image: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/icons/check-circle.svg'); /* Bootstrap check circle icon */
+/* app/assets/stylesheets/custom.css */
+.with-icon-active {
+   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iYmxhY2siLz4=');
    background-repeat: no-repeat;
-   background-position: center; /* Adjust as needed */
-   background-size: contain; /* Ensure the icon fits within the button */
-}
-
-.btn-icon-block {
-   background-image: url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/icons/x-circle.svg'); /* Bootstrap x circle icon */
+   background-position: center left;
+   padding-left: 20px; /* Adjust as needed */
+ }
+ 
+ .with-icon-block {
+   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iYmxhY2siLz4=');
    background-repeat: no-repeat;
-   background-position: center; /* Adjust as needed */
-   background-size: contain; /* Ensure the icon fits within the button */
-}
+   background-position: center left;
+   padding-left: 20px; /* Adjust as needed */
+ }
+ 
