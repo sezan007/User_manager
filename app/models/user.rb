@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
          
   validates :name, presence: true
+  def active_for_authentication?
+    super && status != 'blocked'
+  end
 end

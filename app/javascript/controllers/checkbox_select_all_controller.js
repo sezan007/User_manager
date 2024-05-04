@@ -9,7 +9,7 @@ export default class extends Controller {
     // this.parentTarget.hidden = true;
     this.childTargets.map(x => x.checked = false)
     this.child01Targets.map(y => y.checked = false)
-    // this.child01Targets.map(y => y.hidden = true)
+    this.child01Targets.map(y => y.hidden = true)
   }
   toggleChildren()
   {
