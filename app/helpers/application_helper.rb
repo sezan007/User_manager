@@ -5,4 +5,12 @@ module ApplicationHelper
       concat " #{text}".html_safe
     end
   end
+  def flash_class(key)
+    case key.to_sym
+    when :notice then "alert-success"
+    when :alert, :error then "alert-danger"
+    when :warning then "alert-warning"
+    else "alert-info"
+    end
+  end
 end

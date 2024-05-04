@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       delete :bulk_delete
     end
   end
+  resources :users, controller: 'users/registrations', only: [:new, :create]
 
   resources :users, only: [:index]
 

@@ -14,15 +14,18 @@ class UsersController < ApplicationController
             # puts "555555555555555555555555anything55555555555555555555555"
             # binding.b
             @selected_users.destroy_all
-            redirect_to users_path, notice: "Selected users have been deleted successfully."
+            redirect_to users_path
           
         end
       end 
+    def new
+      @user = User.new
+    end
     def bulk_update
   
         @selected_users=User.where(id:params.fetch(:user_ids,[]).compact)
         #binding.b
-        if params[:commit]=="Block"
+        if params[:commit]=="Blocked"
           @selected_users.update_all(status: :blocked)
           redirect_to users_path, notice: "User status updated successfully."
         elsif params[:commit]=="active"
