@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
 
   devise_for :users, controllers: {
   sessions: 'users/sessions',
@@ -16,7 +13,6 @@ Rails.application.routes.draw do
   resources :users, controller: 'users/registrations', only: [:new, :create]
 
   resources :users, only: [:index]
-  
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -25,7 +21,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  #root "devise/sessions#new"
-
-
+  root "pages#home"
 end
