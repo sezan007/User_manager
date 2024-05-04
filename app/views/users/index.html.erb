@@ -1,12 +1,38 @@
-<!-- app/views/users/index.html.erb -->
-<h1>All Users</h1>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= user.name %></li>
-    <li><%= user.email %></li>
-    <li><%=user.status%></li>
-    <li><%=user.last_sign_in_at%></li>
-   
+
+
+
+<p style="color: green"><%= notice %></p>
+
+
+<h1>Users Alllvahvbakhbkasaksc</h1>
+
+
+
+<%= form_with url: bulk_update_users_path, method: :patch, id: :bulk_actions_form do |form| %>
+  <%= form.submit "active", class: "btn btn-light with-icon01" %>
+  <%= form.submit "Block", class: "btn btn-light with-icon" %>
+<% end %>
+<%= form_with url: bulk_delete_users_path, method: :DELETE, id: :bulk_delete_form do |form| %>
+  <%= form.submit "Delete", class: "btn btn-danger" %>
+<% end %>
+<div data-controller="checkbox-select-all">
+<table class="table table-light table-striped table table-hover table table-bordered">
+  <thead>
+    <tr>
+    <th scope="col"><%= check_box_tag "select all", nil, nil, { data: { checkbox_select_all_target: "parent", action: "change->checkbox-select-all#toggleChildren"} } %></th>
     
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Last Login</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <%= render user %>
   <% end %>
-</ul>
+  
+  </tbody>
+</table>
+</div>
+<%= link_to "New user", new_user_path %>

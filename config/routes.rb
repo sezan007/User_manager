@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     collection do
       patch :bulk_update
       delete :bulk_delete
-      delete :delete_selected
     end
   end
 
